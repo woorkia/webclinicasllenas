@@ -160,6 +160,24 @@ def generate_article(slug, category, title, published_articles):
     }
     bg, fg = cat_colors.get(category, ("F1F5F9","334155"))
 
+    # Navbar exacto que deben usar todos los artículos
+    NAVBAR = """<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Clínicas Llenas">
+      <img src="/logo.png" alt="Clínicas Llenas" fetchpriority="high">
+    </a>
+    <div class="nav-links">
+      <a href="/#problema">Problema</a>
+      <a href="/#proceso">Proceso</a>
+      <a href="/#modulos">Módulos</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#precios">Precios</a>
+      <a href="/blog/" class="active">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location.href='/#contacto'">Diagnóstico gratis</button>
+  </div>
+</nav>"""
+
     prompt = f"""Eres el redactor SEO jefe de Clínicas Llenas, empresa B2B SaaS española que automatiza la gestión de clínicas privadas mediante WhatsApp.
 
 Escribe un artículo de blog COMPLETO con HTML para la URL: https://clinicasllenas.com/blog/{slug}/
@@ -340,7 +358,12 @@ Devuelve SOLO el HTML completo sin explicaciones. Usa esta plantilla:
 </body>
 </html>
 
-IMPORTANTE: Devuelve el HTML completo y funcional. Sustituye [AQUÍ VA TODO EL CONTENIDO] con el contenido real del artículo. No dejes ningún placeholder entre corchetes."""
+CRÍTICO:
+- Devuelve SOLO el HTML puro. NUNCA uses ```html ni ``` ni ningún markdown.
+- El navbar debe ser EXACTAMENTE este, sin modificarlo ni inventar ningún logo:
+{NAVBAR}
+- Sustituye [AQUÍ VA TODO EL CONTENIDO] con el contenido real del artículo.
+- No dejes ningún placeholder entre corchetes."""
 
     message = client.messages.create(
         model="claude-opus-4-5",

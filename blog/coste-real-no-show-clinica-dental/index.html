@@ -110,9 +110,21 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDXZ4PDM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="nav">
-  <a href="/" class="nav-logo">Clínicas<span style="color:#2563EB">Llenas</span></a>
-  <a href="/#contacto" class="nav-cta">Diagnóstico gratis</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Clínicas Llenas">
+      <img src="/logo.png" alt="Clínicas Llenas" fetchpriority="high">
+    </a>
+    <div class="nav-links">
+      <a href="/#problema">Problema</a>
+      <a href="/#proceso">Proceso</a>
+      <a href="/#modulos">Módulos</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#precios">Precios</a>
+      <a href="/blog/" class="active">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location.href='/#contacto'">Diagnóstico gratis</button>
+  </div>
 </nav>
 
 <header class="article-hero">
