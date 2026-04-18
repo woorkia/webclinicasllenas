@@ -1,6 +1,12 @@
 name: 🔄 Regenerar artículos viejos (manual)
 on:
   workflow_dispatch:
+    inputs:
+      count:
+        description: 'Cuántos regenerar (deja vacío para TODOS los 10, o pon 1 para test)'
+        required: false
+        default: '1'
+        type: string
 
 permissions:
   contents: write
@@ -21,20 +27,21 @@ jobs:
       - name: Install dependencies
         run: pip install anthropic
 
-      - name: Regenerar 10 artículos con plantilla correcta
+      - name: Regenerar con plantilla correcta
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COUNT: ${{ inputs.count }}
         run: python scripts/regenerate_bad_articles.py
 
       - name: Commit y push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add blog/
+          git add blog/ sitemap.xml
           if git diff --staged --quiet; then
             echo "No hay cambios"
           else
-            git commit -m "fix: regenerate 10 articles with correct template (matches original design)"
+            git commit -m "fix: regenerate articles with correct template"
             git push
           fi
 

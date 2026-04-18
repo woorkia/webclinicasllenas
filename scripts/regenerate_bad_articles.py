@@ -4,9 +4,15 @@ Regenera los artículos que se crearon con el prompt viejo y quedaron
 con estructura/tipografía rota. Usa la nueva plantilla literal.
 
 Ejecutar via GitHub Actions con workflow_dispatch.
+
+Uso:
+  python regenerate_bad_articles.py           # regenera TODOS los BAD_SLUGS
+  python regenerate_bad_articles.py 1         # regenera solo el primero (test)
+  python regenerate_bad_articles.py 3         # regenera los 3 primeros
 """
 
 import sys
+import os
 from pathlib import Path
 from datetime import datetime
 
@@ -45,7 +51,25 @@ def find_topic(slug):
 
 
 def main():
-    print(f"🔄 Regenerando {len(BAD_SLUGS)} artículos con plantilla correcta")
+    # Determinar cuántos artículos regenerar
+    # 1. arg CLI, 2. env var COUNT, 3. todos
+    count = None
+    if len(sys.argv) > 1:
+        try:
+            count = int(sys.argv[1])
+        except ValueError:
+            pass
+    if count is None and os.environ.get("COUNT"):
+        try:
+            count = int(os.environ["COUNT"])
+        except ValueError:
+            pass
+
+    slugs_to_regen = BAD_SLUGS if count is None else BAD_SLUGS[:count]
+
+    print(f"🔄 Regenerando {len(slugs_to_regen)} artículo(s) con plantilla correcta")
+    if count is not None:
+        print(f"   (modo test: solo los {count} primero(s))")
     today = datetime.now()
 
     # Obtener publicados — EXCLUYENDO los que vamos a regenerar
@@ -62,15 +86,16 @@ def main():
     today_str = f"{today.day} {meses_abbr[today.month]} {today.year}"
 
     regenerated = []
+    total = len(slugs_to_regen)
 
-    for i, slug in enumerate(BAD_SLUGS, 1):
+    for i, slug in enumerate(slugs_to_regen, 1):
         topic = find_topic(slug)
         if not topic:
-            print(f"   ⚠️ [{i}/{len(BAD_SLUGS)}] Slug {slug} no está en TOPICS, saltando")
+            print(f"   ⚠️ [{i}/{total}] Slug {slug} no está en TOPICS, saltando")
             continue
 
         slug, category, title, category_label = topic
-        print(f"\n📝 [{i}/{len(BAD_SLUGS)}] Regenerando: {title}")
+        print(f"\n📝 [{i}/{total}] Regenerando: {title}")
 
         try:
             published_without_self = {s: t for s, t in all_published.items() if s != slug}
@@ -97,7 +122,7 @@ def main():
         update_sitemap(regenerated)
         print(f"\n✅ Sitemap actualizado con {len(regenerated)} URLs")
 
-    print(f"\n🎉 Regenerados {len(regenerated)}/{len(BAD_SLUGS)} artículos con plantilla correcta")
+    print(f"\n🎉 Regenerados {len(regenerated)}/{total} artículos con plantilla correcta")
 
 
 if __name__ == "__main__":
