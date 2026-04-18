@@ -671,37 +671,67 @@ def build_article_html(slug, category, category_label, title, published_articles
     return html, data
 
 
-def update_blog_index(slug, category, title, description, today_str):
-    """Añade el nuevo artículo al índice del blog"""
+def update_blog_index(slug, category, category_label, title, description, today_readable, read_time):
+    """Añade el nuevo artículo al índice del blog con el MISMO diseño que las cards originales"""
     blog_index = Path(__file__).parent.parent / "blog" / "index.html"
     content = blog_index.read_text(encoding="utf-8")
 
-    cat_colors = {
-        "automatización": ("DBEAFE", "1D4ED8"),
-        "whatsapp": ("D1FAE5", "065F46"),
-        "no-shows": ("FEF3C7", "92400E"),
-        "pacientes": ("FCE7F3", "9D174D"),
-        "gestión": ("EDE9FE", "5B21B6"),
+    # Mapear categoría → clase CSS existente (cat-automation, cat-marketing, cat-gestion)
+    cat_class_map = {
+        "automatización": "cat-automation",
+        "no-shows": "cat-automation",
+        "whatsapp": "cat-marketing",
+        "pacientes": "cat-marketing",
+        "gestión": "cat-gestion",
     }
-    bg, fg = cat_colors.get(category, ("F1F5F9", "334155"))
+    cat_class = cat_class_map.get(category, "cat-automation")
+
+    # Etiqueta pequeña que va sobre la imagen (blog-card-img-label)
+    img_label_map = {
+        "automatización": "Automatización",
+        "no-shows": "No-shows",
+        "whatsapp": "WhatsApp",
+        "pacientes": "Pacientes",
+        "gestión": "Gestión",
+    }
+    img_label = img_label_map.get(category, category_label)
+
+    short_desc = description[:160]
+    if len(description) > 160:
+        short_desc = short_desc.rsplit(' ', 1)[0] + "…"
 
     new_card = f"""
-      <article class="blog-card" data-cat="{category}">
-        <a href="/blog/{slug}/">
-          <div class="blog-card-img" style="background:linear-gradient(135deg,#EFF6FF,#F0FDF4);display:flex;align-items:center;justify-content:center;height:180px">
-            <img src="/blog/{get_cat_image(category)}" alt="{title}" style="height:120px;width:auto" loading="lazy">
+    <article class="blog-card" data-cat="{category}">
+      <div class="blog-card-img">
+        <img src="/blog/{get_cat_image(category)}" alt="{title}" loading="lazy">
+        <div class="blog-card-img-label">{img_label}</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat {cat_class}">
+          <div class="blog-card-cat-dot"></div>
+          <span>{category_label}</span>
+        </div>
+        <h2>{title}</h2>
+        <p>{short_desc}</p>
+        <div class="blog-card-meta">
+          <div class="blog-card-author">
+            <div class="blog-card-av">CL</div>
+            <div class="blog-card-author-info">
+              <strong>Equipo Clínicas Llenas</strong>
+              {today_readable} · {read_time} min
+            </div>
           </div>
-        </a>
-        <div class="blog-card-body">
-          <span class="blog-cat" style="background:#{bg};color:#{fg}">{category.upper()}</span>
-          <h2><a href="/blog/{slug}/">{title}</a></h2>
-          <p>{description[:130]}...</p>
-          <div class="blog-card-footer">
-            <span style="font-size:.8rem;color:#94A3B8">{today_str}</span>
-            <a href="/blog/{slug}/" class="blog-read-more">Leer artículo →</a>
+          <div class="blog-card-read">
+            <svg viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+            {read_time} min
           </div>
         </div>
-      </article>"""
+        <a href="/blog/{slug}/" class="blog-card-link" aria-label="Leer: {title}">
+          Leer artículo
+          <svg viewBox="0 0 20 20" style="width:15px;height:15px;fill:currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+    </article>"""
 
     insert_after = '<!-- Artículos generados automáticamente -->'
     if insert_after in content:
@@ -740,9 +770,9 @@ def main():
     topics = pick_topics(used, count=5)
     today = datetime.now()
 
-    meses_abbr = {1: "Ene", 2: "Feb", 3: "Mar", 4: "Abr", 5: "May", 6: "Jun",
-                  7: "Jul", 8: "Ago", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dic"}
-    today_str = f"{today.day} {meses_abbr[today.month]} {today.year}"
+    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+             "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+    today_readable = f"{today.day} {meses[today.month - 1]} {today.year}"
 
     generated_slugs = []
 
@@ -758,8 +788,9 @@ def main():
             print(f"   ✅ Guardado en blog/{slug}/")
 
             description = data.get("meta_description") or f"Guía sobre {title.lower()} para clínicas privadas en España."
+            read_time = data.get("read_time", 7)
 
-            update_blog_index(slug, category, title, description, today_str)
+            update_blog_index(slug, category, category_label, title, description, today_readable, read_time)
             print(f"   ✅ Añadido al índice del blog")
 
             published[slug] = title
