@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
     # Lanzar manualmente desde GitHub → Actions → "Run workflow"
 
+permissions:
+  contents: write
+
 jobs:
   generate-articles:
     runs-on: ubuntu-latest
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: 📥 Checkout del repositorio
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🐍 Configurar Python 3.11
         uses: actions/setup-python@v5
