@@ -1,21 +1,22 @@
-name: 📝 Auto-blog diario
+name: 📝 Auto-blog diario (5 artículos)
 
 on:
   schedule:
-    # Cada día a las 9:00 AM hora de España (UTC+2 en verano = 7:00 UTC)
+    # 9:00 AM hora España (UTC+2 verano = 7:00 UTC / UTC+1 invierno = 8:00 UTC)
     - cron: '0 7 * * *'
   workflow_dispatch:
-    # Permite lanzarlo manualmente desde GitHub → Actions
+    # Lanzar manualmente desde GitHub → Actions → "Run workflow"
 
 jobs:
-  generate-article:
+  generate-articles:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: 📥 Checkout del repositorio
         uses: actions/checkout@v4
 
-      - name: 🐍 Configurar Python
+      - name: 🐍 Configurar Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -23,15 +24,15 @@ jobs:
       - name: 📦 Instalar dependencias
         run: pip install anthropic
 
-      - name: 📝 Generar artículo del blog
+      - name: 📝 Generar 5 artículos del blog
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/generate_blog.py
 
-      - name: 🚀 Commit y push del nuevo artículo
+      - name: 🚀 Commit y push de los nuevos artículos
         run: |
           git config user.name "Clínicas Llenas Bot"
           git config user.email "bot@clinicasllenas.com"
           git add -A
-          git diff --staged --quiet || git commit -m "🤖 Auto-blog: nuevo artículo $(date +'%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "🤖 Auto-blog: 5 artículos nuevos $(date +'%Y-%m-%d')"
           git push
