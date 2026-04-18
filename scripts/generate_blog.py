@@ -348,7 +348,26 @@ IMPORTANTE: Devuelve el HTML completo y funcional. Sustituye [AQUÍ VA TODO EL C
         messages=[{"role": "user", "content": prompt}]
     )
 
-    return message.content[0].text
+    html = message.content[0].text.strip()
+    # Limpiar markdown code fences si Claude los incluye
+    if html.startswith("```html"):
+        html = html[7:]
+    if html.startswith("```"):
+        html = html[3:]
+    if html.endswith("```"):
+        html = html[:-3]
+    return html.strip()
+
+CAT_IMAGES = {
+    "automatización": "img-confirmacion-citas.svg",
+    "whatsapp": "img-whatsapp-business.svg",
+    "no-shows": "img-no-shows.svg",
+    "pacientes": "img-pacientes.svg",
+    "gestión": "img-citas-online.svg",
+}
+
+def get_cat_image(category):
+    return CAT_IMAGES.get(category, "img-recordatorios.svg")
 
 def update_blog_index(slug, category, title, description, today_str):
     """Añade el nuevo artículo al índice del blog"""
@@ -368,7 +387,7 @@ def update_blog_index(slug, category, title, description, today_str):
       <article class="blog-card" data-cat="{category}">
         <a href="/blog/{slug}/">
           <div class="blog-card-img" style="background:linear-gradient(135deg,#EFF6FF,#F0FDF4);display:flex;align-items:center;justify-content:center;height:180px">
-            <img src="/blog/img-{category}.svg" alt="{title}" style="height:120px;width:auto" loading="lazy">
+            <img src="/blog/{get_cat_image(category)}" alt="{title}" style="height:120px;width:auto" loading="lazy">
           </div>
         </a>
         <div class="blog-card-body">
