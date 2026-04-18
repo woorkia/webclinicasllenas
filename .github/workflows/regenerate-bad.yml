@@ -1,0 +1,47 @@
+name: 🔄 Regenerar artículos viejos (manual)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Regenerar 10 artículos con plantilla correcta
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/regenerate_bad_articles.py
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/
+          if git diff --staged --quiet; then
+            echo "No hay cambios"
+          else
+            git commit -m "fix: regenerate 10 articles with correct template (matches original design)"
+            git push
+          fi
+
+      - name: Trigger Coolify deploy
+        if: env.COOLIFY_TOKEN != ''
+        env:
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          curl -X GET "http://178.104.153.116:8000/api/v1/deploy?uuid=${{ secrets.COOLIFY_APP_UUID }}&force=false" \
+            -H "Authorization: Bearer $COOLIFY_TOKEN" || true
