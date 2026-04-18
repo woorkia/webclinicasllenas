@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F766E"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="card4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.06"/>
+    </linearGradient>
+    <filter id="blur4"><feGaussianBlur stdDeviation="45"/></filter>
+    <filter id="shadow4"><feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#000000" flood-opacity="0.35"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg4)"/>
+  <circle cx="180" cy="180" r="300" fill="rgba(255,255,255,0.06)" filter="url(#blur4)"/>
+  <circle cx="1050" cy="480" r="240" fill="rgba(255,255,255,0.08)" filter="url(#blur4)"/>
+
+  <!-- Calendar widget -->
+  <rect x="65" y="90" width="460" height="460" rx="24" fill="white" filter="url(#shadow4)"/>
+  <!-- Calendar header -->
+  <rect x="65" y="90" width="460" height="70" rx="24" fill="#0F766E"/>
+  <rect x="65" y="136" width="460" height="24" fill="#0F766E"/>
+  <text x="185" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="white">◀</text>
+  <text x="295" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="white">Abril 2026</text>
+  <text x="405" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="white">▶</text>
+
+  <!-- Day headers -->
+  <text x="105" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Lu</text>
+  <text x="171" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Ma</text>
+  <text x="237" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Mi</text>
+  <text x="303" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Ju</text>
+  <text x="369" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Vi</text>
+  <text x="435" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Sá</text>
+  <text x="501" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#94a3b8">Do</text>
+
+  <!-- Calendar days row 1 -->
+  <text x="105" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">1</text>
+  <text x="171" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">2</text>
+  <text x="237" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">3</text>
+  <text x="303" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">4</text>
+  <text x="369" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">5</text>
+  <circle cx="435" cy="212" r="16" fill="#e2f8f6"/>
+  <text x="435" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#0F766E" font-weight="bold">6</text>
+
+  <!-- Row 2 -->
+  <text x="105" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">7</text>
+  <text x="171" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">8</text>
+  <circle cx="237" cy="252" r="16" fill="#0F766E"/>
+  <text x="237" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="white" font-weight="bold">9</text>
+  <text x="303" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">10</text>
+  <text x="369" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">11</text>
+  <circle cx="435" cy="252" r="16" fill="#fee2e2"/>
+  <text x="435" y="260" text-anchor="middle" font-family="Arial" font-size="13" fill="#dc2626">12</text>
+  <text x="501" y="260" text-anchor="middle" font-family="Arial" font-size="14" fill="#94a3b8">13</text>
+
+  <!-- Row 3 -->
+  <text x="105" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">14</text>
+  <circle cx="171" cy="292" r="16" fill="#e2f8f6"/>
+  <text x="171" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#0F766E" font-weight="bold">15</text>
+  <text x="237" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">16</text>
+  <circle cx="303" cy="292" r="16" fill="#e2f8f6"/>
+  <text x="303" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#0F766E" font-weight="bold">17</text>
+  <text x="369" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">18</text>
+  <text x="435" y="300" text-anchor="middle" font-family="Arial" font-size="14" fill="#94a3b8">19</text>
+
+  <!-- Time slots -->
+  <rect x="85" y="325" width="420" height="50" rx="10" fill="#f0faf9" stroke="#99f6e4" stroke-width="1"/>
+  <text x="105" y="348" font-family="Arial" font-size="13" fill="#0F766E" font-weight="bold">🕐 09:00</text>
+  <text x="105" y="366" font-family="Arial" font-size="12" fill="#334155">Limpieza dental · Dr. García</text>
+  <rect x="370" y="332" width="90" height="26" rx="13" fill="#0F766E"/>
+  <text x="415" y="350" text-anchor="middle" font-family="Arial" font-size="12" fill="white" font-weight="bold">Confirmar</text>
+
+  <rect x="85" y="385" width="420" height="50" rx="10" fill="#f0faf9" stroke="#99f6e4" stroke-width="1"/>
+  <text x="105" y="408" font-family="Arial" font-size="13" fill="#0F766E" font-weight="bold">🕙 10:30</text>
+  <text x="105" y="426" font-family="Arial" font-size="12" fill="#334155">Revisión ortodoncia · Dra. López</text>
+  <rect x="370" y="392" width="90" height="26" rx="13" fill="#0F766E"/>
+  <text x="415" y="410" text-anchor="middle" font-family="Arial" font-size="12" fill="white" font-weight="bold">Confirmar</text>
+
+  <rect x="85" y="445" width="420" height="50" rx="10" fill="#fef9c3" stroke="#fde68a" stroke-width="1"/>
+  <text x="105" y="468" font-family="Arial" font-size="13" fill="#92400e" font-weight="bold">🕐 11:00</text>
+  <text x="105" y="486" font-family="Arial" font-size="12" fill="#334155">Empaste molar · Dr. García</text>
+  <text x="415" y="477" text-anchor="middle" font-family="Arial" font-size="12" fill="#92400e" font-weight="bold">Ocupado</text>
+
+  <rect x="85" y="505" width="420" height="40" rx="10" fill="#f8fafc" stroke="var(--border)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="295" y="530" text-anchor="middle" font-family="Arial" font-size="13" fill="#94a3b8">+ Añadir nueva cita</text>
+
+  <!-- Right side -->
+  <text x="670" y="118" font-family="Arial,sans-serif" font-weight="800" font-size="34" fill="white">Reservas online</text>
+  <text x="670" y="150" font-family="Arial,sans-serif" font-size="17" fill="rgba(255,255,255,0.75)">Agenda tu clínica 24/7 sin teléfono</text>
+
+  <!-- 4 stats -->
+  <rect x="640" y="175" width="230" height="105" rx="16" fill="url(#card4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="755" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="42" fill="white">34%</text>
+  <text x="755" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)">de citas fuera de horario</text>
+  <text x="755" y="268" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)">reservadas online (20h-9h)</text>
+
+  <rect x="890" y="175" width="255" height="105" rx="16" fill="url(#card4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="1017" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="42" fill="white">-60%</text>
+  <text x="1017" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)">llamadas administrativas</text>
+  <text x="1017" y="268" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)">menos tiempo en recepción</text>
+
+  <!-- Flow steps -->
+  <rect x="640" y="305" width="505" height="50" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="656" y="336" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">1 · Paciente elige horario online</text>
+  <text x="1130" y="336" text-anchor="end" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">→</text>
+
+  <rect x="640" y="370" width="505" height="50" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="656" y="401" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">2 · Confirmación inmediata por WhatsApp</text>
+  <text x="1130" y="401" text-anchor="end" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">→</text>
+
+  <rect x="640" y="435" width="505" height="50" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="656" y="466" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">3 · Recordatorios automáticos 48h y 2h antes</text>
+  <text x="1130" y="466" text-anchor="end" font-family="Arial,sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">→</text>
+
+  <rect x="640" y="500" width="505" height="50" rx="14" fill="rgba(15,118,110,0.5)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="656" y="531" font-family="Arial,sans-serif" font-size="14" fill="white" font-weight="bold">4 · Sin no-show · Clínica llena ✓</text>
+
+  <text x="600" y="598" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">clinicasllenas.com</text>
+</svg>

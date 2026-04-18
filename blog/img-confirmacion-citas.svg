@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C1445"/>
+      <stop offset="55%" stop-color="#1D2B8F"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid dots -->
+  <g fill="rgba(255,255,255,0.07)">
+    <circle cx="100" cy="100" r="3"/><circle cx="200" cy="100" r="3"/><circle cx="300" cy="100" r="3"/>
+    <circle cx="100" cy="200" r="3"/><circle cx="200" cy="200" r="3"/><circle cx="300" cy="200" r="3"/>
+    <circle cx="100" cy="300" r="3"/><circle cx="200" cy="300" r="3"/>
+    <circle cx="900" cy="480" r="3"/><circle cx="1000" cy="480" r="3"/><circle cx="1100" cy="480" r="3"/>
+    <circle cx="950" cy="550" r="3"/><circle cx="1050" cy="550" r="3"/>
+  </g>
+  <!-- Glow -->
+  <ellipse cx="940" cy="180" rx="440" ry="310" fill="rgba(99,102,241,0.18)"/>
+  <!-- Phone mockup -->
+  <rect x="710" y="55" width="270" height="520" rx="32" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+  <!-- Phone screen -->
+  <rect x="723" y="84" width="244" height="460" rx="20" fill="#075E54"/>
+  <!-- WA Header -->
+  <rect x="723" y="84" width="244" height="62" rx="20" fill="#075E54"/>
+  <rect x="723" y="116" width="244" height="30" fill="#075E54"/>
+  <!-- Back arrow + avatar -->
+  <circle cx="752" cy="116" r="14" fill="rgba(255,255,255,0.18)"/>
+  <text x="774" y="112" font-family="system-ui" font-size="13" font-weight="700" fill="white">Clínica Dental</text>
+  <text x="774" y="128" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.55)">Confirmación automática</text>
+  <!-- Dynamic island -->
+  <rect x="800" y="90" width="50" height="13" rx="6" fill="rgba(0,0,0,0.45)"/>
+  <!-- Step 1: Reminder sent -->
+  <rect x="733" y="158" width="196" height="54" rx="10" fill="white"/>
+  <text x="743" y="176" font-family="system-ui" font-size="10" font-weight="700" fill="#075E54">🤖 Bot Clínica</text>
+  <text x="743" y="191" font-family="system-ui" font-size="10" fill="#333">Hola Carlos, tienes cita</text>
+  <text x="743" y="204" font-family="system-ui" font-size="10" fill="#333">mañana a las 11:00h.</text>
+  <text x="889" y="205" font-family="system-ui" font-size="8" fill="#aaa">09:00 ✓✓</text>
+  <!-- Step 2: Confirmation request -->
+  <rect x="733" y="222" width="180" height="44" rx="10" fill="white"/>
+  <text x="743" y="240" font-family="system-ui" font-size="10" fill="#333">¿Confirmas tu asistencia?</text>
+  <text x="743" y="256" font-family="system-ui" font-size="10" fill="#2563EB">Responde SÍ o NO</text>
+  <text x="867" y="259" font-family="system-ui" font-size="8" fill="#aaa">09:00</text>
+  <!-- Step 3: Patient confirms -->
+  <rect x="793" y="276" width="140" height="34" rx="10" fill="#DCF8C6"/>
+  <text x="863" y="298" text-anchor="middle" font-family="system-ui" font-size="11" fill="#333">SÍ, confirmo ✅</text>
+  <text x="890" y="303" font-family="system-ui" font-size="8" fill="#aaa">09:02</text>
+  <!-- Step 4: Confirmed reply -->
+  <rect x="733" y="320" width="196" height="56" rx="10" fill="white"/>
+  <text x="743" y="338" font-family="system-ui" font-size="10" font-weight="700" fill="#075E54">✅ Confirmado</text>
+  <text x="743" y="352" font-family="system-ui" font-size="10" fill="#333">Perfecto Carlos. Te</text>
+  <text x="743" y="366" font-family="system-ui" font-size="10" fill="#333">esperamos mañana.</text>
+  <text x="889" y="369" font-family="system-ui" font-size="8" fill="#aaa">09:02</text>
+  <!-- Step 5: Day-of reminder -->
+  <rect x="733" y="387" width="196" height="54" rx="10" fill="white"/>
+  <text x="743" y="405" font-family="system-ui" font-size="10" fill="#333">Recordatorio: hoy a las</text>
+  <text x="743" y="419" font-family="system-ui" font-size="10" fill="#333">11:00h en C/ Mayor 5.</text>
+  <text x="743" y="432" font-family="system-ui" font-size="10" fill="#2563EB">¡Te esperamos!</text>
+  <text x="889" y="434" font-family="system-ui" font-size="8" fill="#aaa">08:00</text>
+  <!-- Input bar -->
+  <rect x="723" y="500" width="244" height="44" rx="0" fill="rgba(255,255,255,0.08)"/>
+  <rect x="733" y="509" width="170" height="26" rx="13" fill="rgba(255,255,255,0.13)"/>
+  <text x="818" y="526" text-anchor="middle" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.4)">Escribe...</text>
+  <circle cx="952" cy="522" r="13" fill="#25D366"/>
+  <!-- Flow arrows on the right side -->
+  <rect x="1005" y="130" width="140" height="36" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="1075" y="153" text-anchor="middle" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.7)">1. Recordatorio</text>
+  <line x1="1075" y1="166" x2="1075" y2="186" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="1005" y="186" width="140" height="36" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="1075" y="209" text-anchor="middle" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.7)">2. Confirmación</text>
+  <line x1="1075" y1="222" x2="1075" y2="242" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="1005" y="242" width="140" height="36" rx="18" fill="rgba(52,211,153,0.2)" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
+  <text x="1075" y="265" text-anchor="middle" font-family="system-ui" font-size="12" fill="rgba(52,211,153,0.9)">3. SÍ ✓</text>
+  <line x1="1075" y1="278" x2="1075" y2="298" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="1005" y="298" width="140" height="36" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="1075" y="321" text-anchor="middle" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.7)">4. Día anterior</text>
+  <line x1="1075" y1="334" x2="1075" y2="354" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="1005" y="354" width="140" height="36" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="1075" y="377" text-anchor="middle" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.7)">5. Asiste ✅</text>
+  <!-- Left content -->
+  <text x="80" y="185" font-family="system-ui" font-size="15" font-weight="600" fill="rgba(147,197,253,0.9)" letter-spacing="3">AUTOMATIZACIÓN · WHATSAPP</text>
+  <text x="80" y="258" font-family="system-ui" font-size="52" font-weight="900" fill="white">Confirma citas</text>
+  <text x="80" y="323" font-family="system-ui" font-size="52" font-weight="900" fill="white">automático</text>
+  <text x="80" y="388" font-family="system-ui" font-size="52" font-weight="900" fill="rgba(147,197,253,0.95)">WhatsApp</text>
+  <text x="80" y="442" font-family="system-ui" font-size="17" fill="rgba(255,255,255,0.6)" font-weight="400">Sistema de confirmación en 3 pasos</text>
+  <text x="80" y="464" font-family="system-ui" font-size="17" fill="rgba(255,255,255,0.6)" font-weight="400">que funciona 24/7 sin intervención</text>
+  <!-- Stats row -->
+  <text x="80" y="515" font-family="system-ui" font-size="38" font-weight="900" fill="white">94%</text>
+  <text x="80" y="540" font-family="system-ui" font-size="13" fill="rgba(255,255,255,0.5)">tasa de confirmación automática</text>
+  <!-- Logo badge -->
+  <rect x="80" y="575" width="185" height="40" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="172" y="600" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="800" fill="white">Clínicas Llenas</text>
+</svg>

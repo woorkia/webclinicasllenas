@@ -1,0 +1,20 @@
+{
+  "name": "Clínicas Llenas",
+  "short_name": "ClínicasLlenas",
+  "description": "Automatización WhatsApp para clínicas privadas en España. Más citas, menos no-shows.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1E3A5F",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "categories": ["business", "health", "medical"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

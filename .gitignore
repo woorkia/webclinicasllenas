@@ -1,0 +1,7 @@
+.vercel
+.DS_Store
+*.env
+.env*
+node_modules/
+SIN FONDO LOGO.png
+image.png

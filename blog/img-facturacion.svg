@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#1E3A5F"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="blue3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#1E4FC9"/>
+    </linearGradient>
+    <linearGradient id="green3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="blur3"><feGaussianBlur stdDeviation="50"/></filter>
+    <filter id="shadow3"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  <circle cx="250" cy="200" r="300" fill="rgba(37,99,235,0.12)" filter="url(#blur3)"/>
+  <circle cx="1000" cy="450" r="250" fill="rgba(245,158,11,0.1)" filter="url(#blur3)"/>
+
+  <!-- Left: Revenue chart area -->
+  <text x="80" y="110" font-family="Arial,sans-serif" font-weight="800" font-size="28" fill="white">Facturación mensual</text>
+
+  <!-- Chart base -->
+  <line x1="80" y1="460" x2="560" y2="460" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="80" y1="390" x2="560" y2="390" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="320" x2="560" y2="320" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="250" x2="560" y2="250" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="80" y1="180" x2="560" y2="180" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Y axis labels -->
+  <text x="60" y="464" text-anchor="end" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.4)">0€</text>
+  <text x="60" y="394" text-anchor="end" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.4)">10k€</text>
+  <text x="60" y="324" text-anchor="end" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.4)">20k€</text>
+  <text x="60" y="254" text-anchor="end" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.4)">30k€</text>
+  <text x="60" y="184" text-anchor="end" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.4)">40k€</text>
+
+  <!-- Area chart (filled) - growth curve -->
+  <defs>
+    <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  <path d="M80,430 L140,420 L200,400 L260,370 L320,330 L380,280 L440,230 L500,185 L560,160 L560,460 L80,460 Z" fill="url(#areaGrad)"/>
+  <path d="M80,430 L140,420 L200,400 L260,370 L320,330 L380,280 L440,230 L500,185 L560,160" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Dots on line -->
+  <circle cx="80" cy="430" r="5" fill="#2563EB"/>
+  <circle cx="200" cy="400" r="5" fill="#2563EB"/>
+  <circle cx="320" cy="330" r="5" fill="#2563EB"/>
+  <circle cx="440" cy="230" r="5" fill="#2563EB"/>
+  <circle cx="560" cy="160" r="8" fill="#F59E0B" stroke="white" stroke-width="2"/>
+
+  <!-- Month labels -->
+  <text x="80" y="480" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.5)">Ene</text>
+  <text x="200" y="480" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.5)">Feb</text>
+  <text x="320" y="480" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.5)">Mar</text>
+  <text x="440" y="480" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.5)">Abr</text>
+  <text x="560" y="480" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.7)">May</text>
+
+  <!-- Tooltip -->
+  <rect x="490" y="120" width="130" height="56" rx="10" fill="#F59E0B" filter="url(#shadow3)"/>
+  <text x="555" y="143" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="18" fill="white">+38.500€</text>
+  <text x="555" y="163" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">en mayo (+87%)</text>
+
+  <!-- Right side: 3 levers -->
+  <text x="640" y="105" font-family="Arial,sans-serif" font-weight="800" font-size="26" fill="white">3 palancas de facturación</text>
+
+  <!-- Lever 1 -->
+  <rect x="640" y="125" width="520" height="130" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(37,99,235,0.4)" stroke-width="1"/>
+  <rect x="640" y="125" width="6" height="130" rx="3" fill="url(#blue3)"/>
+  <text x="665" y="158" font-family="Arial,sans-serif" font-weight="800" font-size="16" fill="white">1 · Recuperar ingresos perdidos</text>
+  <text x="665" y="180" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">15% de no-shows × 90€ × 20 citas/día</text>
+  <text x="665" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#60A5FA">= 5.400€/mes recuperables inmediatamente</text>
+  <text x="665" y="220" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)">Con recordatorios automáticos WhatsApp</text>
+  <text x="1130" y="200" text-anchor="end" font-family="Arial,sans-serif" font-weight="800" font-size="26" fill="#2563EB">+5.4k€</text>
+
+  <!-- Lever 2 -->
+  <rect x="640" y="275" width="520" height="130" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <rect x="640" y="275" width="6" height="130" rx="3" fill="url(#green3)"/>
+  <text x="665" y="308" font-family="Arial,sans-serif" font-weight="800" font-size="16" fill="white">2 · Reactivar pacientes dormidos</text>
+  <text x="665" y="330" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">30% de pacientes llevan +12 meses sin visita</text>
+  <text x="665" y="350" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#34D399">= 8.200€/mes de ingresos adicionales</text>
+  <text x="665" y="370" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)">Con campañas de reactivación automáticas</text>
+  <text x="1130" y="350" text-anchor="end" font-family="Arial,sans-serif" font-weight="800" font-size="26" fill="#10B981">+8.2k€</text>
+
+  <!-- Lever 3 -->
+  <rect x="640" y="425" width="520" height="130" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+  <rect x="640" y="425" width="6" height="130" rx="3" fill="url(#gold)"/>
+  <text x="665" y="458" font-family="Arial,sans-serif" font-weight="800" font-size="16" fill="white">3 · Mejores reseñas → más pacientes</text>
+  <text x="665" y="480" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Pasar de 4.1★ a 4.8★ en Google</text>
+  <text x="665" y="500" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#FCD34D">= 23% más solicitudes de nuevos pacientes</text>
+  <text x="665" y="520" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.5)">Con mensajes automáticos post-consulta</text>
+  <text x="1130" y="500" text-anchor="end" font-family="Arial,sans-serif" font-weight="800" font-size="26" fill="#F59E0B">+23%</text>
+
+  <text x="600" y="598" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">clinicasllenas.com</text>
+</svg>

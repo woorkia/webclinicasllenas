@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#075E54"/>
+      <stop offset="100%" style="stop-color:#128C7E"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+    </linearGradient>
+    <filter id="blur2"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="shadow2"><feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000000" flood-opacity="0.4"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <circle cx="150" cy="120" r="300" fill="rgba(255,255,255,0.05)" filter="url(#blur2)"/>
+  <circle cx="1100" cy="520" r="250" fill="rgba(255,255,255,0.07)" filter="url(#blur2)"/>
+
+  <!-- Phone mockup -->
+  <rect x="80" y="60" width="280" height="510" rx="36" fill="#1a1a2e" filter="url(#shadow2)"/>
+  <rect x="90" y="70" width="260" height="490" rx="28" fill="#ECE5DD"/>
+  <!-- WA Header -->
+  <rect x="90" y="70" width="260" height="56" rx="28" fill="#075E54"/>
+  <rect x="90" y="98" width="260" height="28" fill="#075E54"/>
+  <circle cx="120" cy="98" r="18" fill="#128C7E"/>
+  <text x="120" y="103" text-anchor="middle" font-family="Arial" font-size="14" fill="white" font-weight="bold">CM</text>
+  <text x="150" y="91" font-family="Arial" font-size="13" fill="white" font-weight="bold">Clínica Martínez</text>
+  <text x="150" y="107" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.8)">En línea</text>
+
+  <!-- Messages -->
+  <rect x="105" y="140" width="210" height="55" rx="10" fill="#DCF8C6"/>
+  <text x="120" y="160" font-family="Arial" font-size="12" fill="#1a1a1a">Hola Cristina 👋 Tu cita de</text>
+  <text x="120" y="177" font-family="Arial" font-size="12" fill="#1a1a1a">limpieza es mañana a las 11h</text>
+  <text x="295" y="190" text-anchor="end" font-family="Arial" font-size="10" fill="#999">10:24 ✓✓</text>
+
+  <rect x="105" y="210" width="185" height="42" rx="10" fill="white"/>
+  <text x="120" y="228" font-family="Arial" font-size="12" fill="#1a1a1a">¡Perfecto! Allí estaré 😊</text>
+  <text x="130" y="246" font-family="Arial" font-size="10" fill="#999">10:31</text>
+
+  <rect x="105" y="268" width="230" height="68" rx="10" fill="#DCF8C6"/>
+  <text x="120" y="288" font-family="Arial" font-size="12" fill="#1a1a1a">¿Qué tal fue la visita? 😊</text>
+  <text x="120" y="305" font-family="Arial" font-size="12" fill="#1a1a1a">Déjanos una reseña en Google</text>
+  <text x="120" y="322" font-family="Arial" font-size="12" fill="#075E54">→ g.page/clinica-martinez</text>
+  <text x="315" y="332" text-anchor="end" font-family="Arial" font-size="10" fill="#999">16:05 ✓✓</text>
+
+  <rect x="105" y="352" width="180" height="55" rx="10" fill="white"/>
+  <text x="120" y="370" font-family="Arial" font-size="12" fill="#1a1a1a">Ya la dejé! 5 estrellas 🌟</text>
+  <text x="120" y="387" font-family="Arial" font-size="12" fill="#1a1a1a">Muy buen trato!</text>
+  <text x="275" y="402" text-anchor="end" font-family="Arial" font-size="10" fill="#999">16:12</text>
+
+  <!-- WA Business badge -->
+  <rect x="105" y="430" width="230" height="40" rx="10" fill="#25D366" opacity="0.15"/>
+  <text x="220" y="455" text-anchor="middle" font-family="Arial" font-size="12" fill="#075E54" font-weight="bold">✓ WhatsApp Business API</text>
+
+  <!-- Right side stats and features -->
+  <text x="680" y="130" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="38" fill="white">WhatsApp Business</text>
+  <text x="680" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="rgba(255,255,255,0.75)">para clínicas dentales</text>
+
+  <!-- Feature boxes -->
+  <rect x="430" y="200" width="230" height="90" rx="16" fill="url(#card2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="445" y="232" font-family="Arial,sans-serif" font-size="22">📅</text>
+  <text x="478" y="232" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="white">Citas automáticas</text>
+  <text x="445" y="255" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Confirmaciones y recordatorios</text>
+  <text x="445" y="275" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">sin intervención humana</text>
+
+  <rect x="680" y="200" width="230" height="90" rx="16" fill="url(#card2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="695" y="232" font-family="Arial,sans-serif" font-size="22">⭐</text>
+  <text x="728" y="232" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="white">Más reseñas</text>
+  <text x="695" y="255" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Pide valoraciones tras cada</text>
+  <text x="695" y="275" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">visita de forma natural</text>
+
+  <rect x="430" y="310" width="230" height="90" rx="16" fill="url(#card2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="445" y="342" font-family="Arial,sans-serif" font-size="22">🔄</text>
+  <text x="478" y="342" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="white">Reactivación</text>
+  <text x="445" y="365" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Recupera pacientes que</text>
+  <text x="445" y="385" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">llevan meses sin venir</text>
+
+  <rect x="680" y="310" width="230" height="90" rx="16" fill="url(#card2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="695" y="342" font-family="Arial,sans-serif" font-size="22">🔒</text>
+  <text x="728" y="342" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="white">100% RGPD</text>
+  <text x="695" y="365" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">Cumplimiento legal para</text>
+  <text x="695" y="385" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">clínicas en España</text>
+
+  <!-- Bottom stat -->
+  <rect x="430" y="425" width="480" height="100" rx="20" fill="rgba(37,211,102,0.2)" stroke="rgba(37,211,102,0.4)" stroke-width="1"/>
+  <text x="670" y="468" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="36" fill="white">98% tasa apertura</text>
+  <text x="670" y="498" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.8)">vs 22% del email · El canal más efectivo para clínicas</text>
+
+  <text x="920" y="580" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="rgba(255,255,255,0.5)">clinicasllenas.com</text>
+</svg>

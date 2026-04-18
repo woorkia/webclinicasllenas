@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://www.clinicasllenas.com/sitemap.xml
+Sitemap: https://clinicasllenas.com/sitemap.xml

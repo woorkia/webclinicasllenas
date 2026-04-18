@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#000000" flood-opacity="0.3"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- bg circles -->
+  <circle cx="200" cy="150" r="280" fill="rgba(255,255,255,0.06)" filter="url(#blur)"/>
+  <circle cx="1050" cy="480" r="220" fill="rgba(255,255,255,0.08)" filter="url(#blur)"/>
+
+  <!-- Google card -->
+  <rect x="90" y="140" width="480" height="350" rx="20" fill="white" filter="url(#shadow)"/>
+
+  <!-- Google logo text -->
+  <text x="120" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#4285F4">G</text>
+  <text x="138" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#EA4335">o</text>
+  <text x="154" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#FBBC05">o</text>
+  <text x="170" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#4285F4">g</text>
+  <text x="186" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#34A853">l</text>
+  <text x="196" y="200" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#EA4335">e</text>
+
+  <text x="120" y="235" font-family="Arial,sans-serif" font-weight="700" font-size="17" fill="#1a1a1a">Clínica Dental Martínez</text>
+  <text x="120" y="258" font-family="Arial,sans-serif" font-size="13" fill="#5f6368">Clínica dental · Madrid</text>
+
+  <!-- Stars row 1 -->
+  <text x="120" y="295" font-family="Arial" font-size="26" fill="#FBBC05">★★★★★</text>
+  <text x="285" y="292" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#1a1a1a">4.9</text>
+  <text x="310" y="292" font-family="Arial,sans-serif" font-size="13" fill="#5f6368">(247 reseñas)</text>
+
+  <!-- Bar chart of stars -->
+  <text x="120" y="335" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">5 ★</text>
+  <rect x="155" y="323" width="230" height="10" rx="5" fill="#e8eaed"/>
+  <rect x="155" y="323" width="207" height="10" rx="5" fill="#FBBC05"/>
+  <text x="393" y="335" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">90%</text>
+
+  <text x="120" y="360" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">4 ★</text>
+  <rect x="155" y="348" width="230" height="10" rx="5" fill="#e8eaed"/>
+  <rect x="155" y="348" width="46" height="10" rx="5" fill="#FBBC05"/>
+  <text x="393" y="360" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">7%</text>
+
+  <text x="120" y="385" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">3 ★</text>
+  <rect x="155" y="373" width="230" height="10" rx="5" fill="#e8eaed"/>
+  <rect x="155" y="373" width="9" height="10" rx="5" fill="#FBBC05"/>
+  <text x="393" y="385" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">3%</text>
+
+  <text x="120" y="420" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">2 ★</text>
+  <rect x="155" y="408" width="230" height="10" rx="5" fill="#e8eaed"/>
+
+  <text x="120" y="445" font-family="Arial,sans-serif" font-size="12" fill="#5f6368">1 ★</text>
+  <rect x="155" y="433" width="230" height="10" rx="5" fill="#e8eaed"/>
+
+  <!-- WhatsApp message bubble -->
+  <rect x="640" y="130" width="480" height="200" rx="20" fill="url(#card)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="670" y="168" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Clínica Dental Martínez</text>
+  <rect x="660" y="185" width="360" height="90" rx="14" fill="rgba(255,255,255,0.95)"/>
+  <text x="680" y="212" font-family="Arial,sans-serif" font-size="13" fill="#1a1a1a">Hola María 👋 ¿Qué tal fue tu visita</text>
+  <text x="680" y="232" font-family="Arial,sans-serif" font-size="13" fill="#1a1a1a">de hoy? Nos encantaría conocer tu</text>
+  <text x="680" y="252" font-family="Arial,sans-serif" font-size="13" fill="#1a1a1a">opinión ⭐ → g.page/clinica-martinez</text>
+  <text x="960" y="270" font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">09:47 ✓✓</text>
+
+  <!-- Stats right side -->
+  <rect x="640" y="370" width="215" height="110" rx="16" fill="url(#card)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="748" y="415" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="42" fill="white">+68%</text>
+  <text x="748" y="445" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)">más reseñas en 30 días</text>
+  <text x="748" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">con mensajes automáticos</text>
+
+  <rect x="875" y="370" width="245" height="110" rx="16" fill="url(#card)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="998" y="415" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="42" fill="white">4.9★</text>
+  <text x="998" y="445" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.8)">nota media alcanzable</text>
+  <text x="998" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.6)">clínicas con el sistema</text>
+
+  <!-- Title -->
+  <text x="600" y="570" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="28" fill="white">Más reseñas en Google = más pacientes nuevos</text>
+  <text x="600" y="602" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="rgba(255,255,255,0.75)">clinicasllenas.com</text>
+</svg>
