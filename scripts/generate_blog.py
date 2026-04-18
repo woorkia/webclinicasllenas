@@ -382,7 +382,7 @@ def update_blog_index(slug, category, title, description, today_str):
         </div>
       </article>"""
 
-    insert_after = '<div class="blog-grid" id="blog-grid">'
+    insert_after = '<!-- Artículos generados automáticamente -->'
     if insert_after in content:
         content = content.replace(insert_after, insert_after + new_card, 1)
         blog_index.write_text(content, encoding="utf-8")
