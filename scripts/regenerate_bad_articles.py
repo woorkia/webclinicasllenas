@@ -18,6 +18,8 @@ from generate_blog import (
     build_article_html,
     get_all_published_articles,
     get_cat_image,
+    update_blog_index,
+    update_sitemap,
 )
 
 # Los 10 artículos generados mal que hay que regenerar
@@ -55,6 +57,10 @@ def main():
         if topic:
             all_published[slug] = topic[2]
 
+    meses_abbr = {1: "Ene", 2: "Feb", 3: "Mar", 4: "Abr", 5: "May", 6: "Jun",
+                  7: "Jul", 8: "Ago", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dic"}
+    today_str = f"{today.day} {meses_abbr[today.month]} {today.year}"
+
     regenerated = []
 
     for i, slug in enumerate(BAD_SLUGS, 1):
@@ -67,21 +73,29 @@ def main():
         print(f"\n📝 [{i}/{len(BAD_SLUGS)}] Regenerando: {title}")
 
         try:
-            # Para evitar auto-enlace, quitamos el slug actual
             published_without_self = {s: t for s, t in all_published.items() if s != slug}
 
-            html, _ = build_article_html(
+            html, data = build_article_html(
                 slug, category, category_label, title, published_without_self, today
             )
 
             article_dir = Path(__file__).parent.parent / "blog" / slug
             article_dir.mkdir(parents=True, exist_ok=True)
             (article_dir / "index.html").write_text(html, encoding="utf-8")
-            print(f"   ✅ Sobrescrito blog/{slug}/index.html")
+            print(f"   ✅ Creado blog/{slug}/index.html")
+
+            description = data.get("meta_description") or f"Guía sobre {title.lower()} para clínicas privadas en España."
+            update_blog_index(slug, category, title, description, today_str)
+            print(f"   ✅ Card añadida al blog index")
+
             regenerated.append(slug)
 
         except Exception as e:
             print(f"   ❌ Error regenerando {slug}: {e}")
+
+    if regenerated:
+        update_sitemap(regenerated)
+        print(f"\n✅ Sitemap actualizado con {len(regenerated)} URLs")
 
     print(f"\n🎉 Regenerados {len(regenerated)}/{len(BAD_SLUGS)} artículos con plantilla correcta")
 
