@@ -635,7 +635,7 @@ button { font-family: var(--font-body); }
 @media(max-width:960px) { .scroll-hint { display:none; } }
 
 /* Override phone size for demo */
-.demo-phone-col .phone-frame { width:280px; height:580px; }
+.demo-phone-col .phone-frame { width:280px; height:580px; transition:transform 0.15s cubic-bezier(0.16,1,0.3,1); will-change:transform; }
 
 .demo-info-col { position:relative; min-height:580px; overflow:hidden; }
 .demo-slide { position:absolute; inset:0; padding:2.5rem 3rem 2rem; display:flex; flex-direction:column; opacity:0; pointer-events:none; transform:translateY(10px); transition:opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); overflow-y:auto; }
@@ -1914,16 +1914,36 @@ function closeMenu() {
   }
 })();
 
-/* ── TABS MANUAL ── */
+/* ── TABS + AUTO-CYCLE ── */
 (function(){
   var tabs = document.querySelectorAll('.demo-tab');
   var screens = document.querySelectorAll('.wa-screen');
   var slides = document.querySelectorAll('.demo-slide');
   var current = 0;
+  var AUTO_DUR = 12000; // ms per module
+  var timer = null;
+  var paused = false;
 
-  function activate(idx) {
+  function restartFill(idx) {
+    var fill = tabs[idx].querySelector('.dt-fill');
+    if (!fill) return;
+    fill.classList.remove('dt-running');
+    void fill.offsetWidth; // reflow
+    fill.style.setProperty('--dt-dur', (AUTO_DUR / 1000) + 's');
+    fill.classList.add('dt-running');
+  }
+
+  function stopFill(idx) {
+    var fill = tabs[idx].querySelector('.dt-fill');
+    if (!fill) return;
+    fill.classList.remove('dt-running');
+    fill.style.width = '0%';
+  }
+
+  function activate(idx, isAuto) {
     var prev = current;
     tabs[prev].classList.remove('dt-active');
+    stopFill(prev);
     screens[prev].classList.remove('ws-active');
     screens[prev].classList.add('ws-exit');
     setTimeout(function() { screens[prev].classList.remove('ws-exit'); }, 400);
@@ -1940,13 +1960,70 @@ function closeMenu() {
 
     void slides[current].offsetWidth;
     slides[current].classList.add('ds-active');
+
+    if (!paused) restartFill(current);
+    if (!isAuto) scheduleNext();
+  }
+
+  function next() {
+    if (paused) return;
+    activate((current + 1) % tabs.length, true);
+    scheduleNext();
+  }
+
+  function scheduleNext() {
+    clearTimeout(timer);
+    if (!paused) timer = setTimeout(next, AUTO_DUR);
   }
 
   tabs.forEach(function(t, i) {
     t.addEventListener('click', function() {
-      if (i === current) return;
-      activate(i);
+      paused = false;
+      if (i === current) { scheduleNext(); return; }
+      activate(i, false);
     });
+  });
+
+  // Pause on hover over demo grid
+  var grid = document.querySelector('.demo-grid');
+  if (grid) {
+    grid.addEventListener('mouseenter', function() {
+      paused = true;
+      clearTimeout(timer);
+      var fill = tabs[current].querySelector('.dt-fill');
+      if (fill) fill.classList.remove('dt-running');
+    });
+    grid.addEventListener('mouseleave', function() {
+      paused = false;
+      restartFill(current);
+      scheduleNext();
+    });
+  }
+
+  // Start
+  restartFill(current);
+  timer = setTimeout(next, AUTO_DUR);
+})();
+
+/* ── 3D TILT ON PHONE ── */
+(function(){
+  var phoneCol = document.querySelector('.demo-phone-col');
+  var frame = document.querySelector('.demo-phone-col .phone-frame');
+  if (!phoneCol || !frame) return;
+
+  phoneCol.addEventListener('mousemove', function(e) {
+    var rect = phoneCol.getBoundingClientRect();
+    var cx = rect.left + rect.width / 2;
+    var cy = rect.top + rect.height / 2;
+    var dx = (e.clientX - cx) / (rect.width / 2);
+    var dy = (e.clientY - cy) / (rect.height / 2);
+    var tiltX = (-dy * 8).toFixed(2);
+    var tiltY = (dx * 8).toFixed(2);
+    frame.style.transform = 'perspective(800px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) scale3d(1.02,1.02,1.02)';
+  });
+
+  phoneCol.addEventListener('mouseleave', function() {
+    frame.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
   });
 })();
 
